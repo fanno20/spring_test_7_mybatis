@@ -10,5 +10,6 @@
 <a href="/p7/">HOME</a><br>
 <a href="/p7/board/view?num=1">글한개보기</a><br>
 <a href="/p7/board/writerForm">글쓰기</a><br>
+<a href="/p7/board/list?curPage=1">글목록</a><br>
 </body>
 </html>

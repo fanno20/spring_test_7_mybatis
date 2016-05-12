@@ -7,4 +7,28 @@
   	<select id="view" resultType="com.hsh.board.BoardDTO"> <!-- id, DAO의 메서드명 과 일치 -->
   		select * from notice_board where num=#{num}
   	</select>
+  	
+  	<insert id="write">
+  		<![CDATA[insert into notice_board values(notice_seq.nextVal,#{writer},#{title},#{contents},0,sysdate)]]>
+  	</insert>
+  	
+  	<select id="list" resultType="com.hsh.board.BoardDTO">
+  		select * from
+  		(select rownum R, A.* from 
+  		(select * from notice_board order by num ) A )
+  		where R between #{start} and #{last}
+  	</select>
+  	
+  	<select id="totlaList" resultType="java.lang.Integer">
+  		select count(num) from NOTICE_BOARD
+  	</select>
+  
+  	<delete id="delete">
+  		delete notice_board where num=#{num}
+  	</delete>
+  	
+  	<update id="update">
+  		update notice_board set title=#{title}, contents=#{contents} where num=#{num}
+  	</update>
+  	
   </mapper>

@@ -41,11 +41,12 @@ $(function(){
 </script>
 </head>
 <body>
-<h2>WRITER FORM PAGE</h2>
-	<form action="./write" method="post" id="frm">
-		writer : <input type="text" name="writer"><br>
-		title : <input type="text" name="title"><br>
-		contents : <textarea name="contents" id="smarteditor"></textarea><br>
+	<h2>UPDATE FORM PAGE</h2>
+	<form action="./update" method="post" id="frm">
+		<input type="hidden" name="num" value="${bdDto.num}">
+		writer : <input type="text" name="writer" value="${bdDto.writer}"><br>
+		title : <input type="text" name="title" value="${bdDto.title}"><br>
+		contents : <textarea name="contents" id="smarteditor">${bdDto.contents}</textarea><br>
 		<input type="button" value="writer" id="savebutton"><br>
 	</form>
 </body>
