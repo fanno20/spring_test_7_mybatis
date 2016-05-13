@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="TeamMapper">
+  	<insert id="insert" >
+  		<![CDATA[insert into member2 values(#{id},#{pws},#{name})]]>
+  	</insert>
+  	
+  	<select id="createTeam">
+  		select * from 
+  		(select rownum R, A.* from 
+  		(select * from member2 where name=#{name}) A ) R=1 
+  	</select>
+  	
+  	<delete id="delete">
+  		delete member2 where id=#{id}
+  	</delete>
+  	
+  </mapper>

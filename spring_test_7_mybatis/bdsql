@@ -1,0 +1,17 @@
+select * from member2
+
+delete member2 where name='ga';
+delete member2 where name='na';
+delete member2 where name='da';
+
+create table pot(
+	num number(6) primary key,
+	part varchar2(100),
+	name varchar2(400)
+)
+
+select * from pot
+
+create sequence pot_seq
+start with 1
+increment by 1
